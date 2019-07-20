@@ -1,0 +1,18 @@
+{
+	"columns": {
+		"role_id": {
+			"association": {
+                "target_table": "sys_role",
+                "target_column": "id",
+                "type": "n_1"
+            }
+		},
+		"permission_id": {
+			"association": {
+                "target_table": "sys_permission",
+                "target_column": "id",
+                "type": "n_1"
+            }
+		}
+	}
+}

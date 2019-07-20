@@ -1,0 +1,30 @@
+<ehcache name="shiro-cache" updateCheck="false">
+
+  <diskStore path="java.io.tmpdir/shiro-cache" />
+
+  <!-- Shiro 认证信息缓存配置 -->
+  <cache name="authenticationCache" maxEntriesLocalHeap="2000"
+    eternal="false" timeToIdleSeconds="3600" timeToLiveSeconds="0"
+    overflowToDisk="false" statistics="true" />
+
+  <!-- Shiro 权限信息缓存配置 -->
+  <cache name="authorizationCache" maxEntriesLocalHeap="2000"
+    eternal="false" timeToIdleSeconds="3600" timeToLiveSeconds="0"
+    overflowToDisk="false" statistics="true" />
+
+  <!-- Shiro Session 缓存配置 -->
+  <!-- overflowToDisk="true" 内存达到限制后持久化到磁盘 eternal="true" 确保Session永远存在, 
+    不会过期或被缓存删除 -->
+  <cache name="shiro-activeSessionCache" maxElementsInMemory="10000"
+    eternal="true" overflowToDisk="true" diskPersistent="true"
+    diskExpiryThreadIntervalSeconds="600" />
+
+  <cache name="org.apache.shiro.realm.SimpleAccountRealm.authorization"
+    maxElementsInMemory="100" eternal="false" timeToLiveSeconds="600"
+    overflowToDisk="false" />
+
+  <defaultCache maxElementsInMemory="10000" eternal="false"
+    timeToIdleSeconds="120" timeToLiveSeconds="120" overflowToDisk="false"
+    diskPersistent="false" diskExpiryThreadIntervalSeconds="120" />
+
+</ehcache>

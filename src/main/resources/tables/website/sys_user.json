@@ -1,0 +1,10 @@
+{
+	"columns": {
+		"org_id": {
+			"association": {
+                "target_table": "sys_org",
+                "target_column": "id"
+            }
+		}
+	}
+}
