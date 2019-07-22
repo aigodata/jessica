@@ -1,13 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import localStore from 'store'								// 浏览器存储
+import localStore from 'store' // 浏览器存储
 
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/zh-CN'
 
 import './assets/styles/main.css'
-
+import './assets/fonts/iconfont.css' // 图标字体
+import './assets/fonts/iconfont.js'
+import 'element-ui/lib/theme-chalk/index.css' // element-ui
 Vue.use(ElementUI, { locale, size: 'small' });
 
 
