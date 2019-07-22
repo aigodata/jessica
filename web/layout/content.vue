@@ -8,8 +8,8 @@
 				</i>
 			</el-input>
 			<!-- 树形菜单 -->
-			<div>
-				<el-tree :data="data" show-checkbox node-key="id" default-expand-all :expand-on-click-node="false" :render-content="renderContent">
+			<div class="ai-layout-content-list-tree">
+				<el-tree :data="data" node-key="id" default-expand-all :expand-on-click-node="false" :render-content="renderContent">
 				</el-tree>
 			</div>
 		</div>
@@ -21,14 +21,71 @@
 	export default {
 		name: "layout-content",
 		data () {
+			const data = [
+				{
+					id: 1,
+					label: '一级 1',
+					children: [{
+						id: 4,
+						label: '二级 1-1',
+						children: [{
+							id: 9,
+							label: '三级 1-1-1'
+						}, {
+							id: 10,
+							label: '三级 1-1-2'
+						}]
+					}]
+				}, {
+					id: 2,
+					label: '一级 2',
+					children: [{
+						id: 5,
+						label: '二级 2-1'
+					}, {
+						id: 6,
+						label: '二级 2-2'
+					}]
+				}, {
+					id: 3,
+					label: '一级 3',
+					children: [{
+						id: 7,
+						label: '二级 3-1'
+					}, {
+						id: 8,
+						label: '二级 3-2'
+					}]
+				}];
 			return {
-                inputValue: "",
-                data:[]
+				inputValue: "",
+				data: JSON.parse(JSON.stringify(data))
 			}
-        },
-        methods: {
-            renderContent(){}
-        }
+		},
+		methods: {
+			renderContent (h, { node, data, store }) {
+				return (
+					<span class="custom-tree-node">
+						<i class="iconfont iconbaohudi_wenjianjia ai-layout-content-tree-icon"></i>
+						<span>{node.label}</span>
+						<span class="tree_edit">
+							<el-tooltip class="item" effect="dark" content="新增" placement="top">
+								<i class="iconfont iconxinzeng" on-click={() => this.appendTree(data)}></i>
+							</el-tooltip>
+							<el-tooltip class="item" effect="dark" content="编辑" placement="top">
+								<i class="iconfont iconxiugai" on-click={() => this.editTree(data)}></i>
+							</el-tooltip>
+							<el-tooltip class="item" effect="dark" content="删除" placement="top">
+								<i class="iconfont iconshanchu" on-click={() => this.deleteTree(node, data)}></i>
+							</el-tooltip>
+						</span>
+					</span>
+				);
+			},
+			appendTree () { },
+			editTree () { },
+			deleteTree () { }
+		}
 	};
 </script>
 
@@ -54,6 +111,88 @@
 		border-right: 1px solid #d3d3d3;
 		padding: 20px;
 	}
+	.ai-layout-content .ai-layout-content-left .ai-layout-content-list-tree {
+		margin-top: 20px;
+		border-top: 1px solid #ededed;
+		padding: 20px;
+	}
+	.ai-layout-content
+		.ai-layout-content-left
+		.ai-layout-content-list-tree
+		.ai-layout-content-tree-icon {
+		margin-right: 5px;
+	}
+	.ai-layout-content
+		.ai-layout-content-left
+		.ai-layout-content-list-tree
+		.el-tree
+		.custom-tree-node
+		.tree_edit {
+		display: none;
+	}
+	.ai-layout-content
+		.ai-layout-content-left
+		.ai-layout-content-list-tree
+		.el-tree
+		.el-tree-node__content:hover
+		.tree_edit {
+		display: inline-block;
+	}
+	.ai-layout-content
+		.ai-layout-content-left
+		.ai-layout-content-list-tree
+		.el-tree
+		.custom-tree-node {
+		width: 100%;
+	}
+	.ai-layout-content
+		.ai-layout-content-left
+		.ai-layout-content-list-tree
+		.el-tree
+		.el-tree-node {
+		line-height: 32px;
+		font-size: 12px;
+	}
+	.ai-layout-content
+		.ai-layout-content-left
+		.ai-layout-content-list-tree
+		.el-tree
+		.el-tree-node__content {
+		height: 32px !important;
+		line-height: 32px !important;
+	}
+	.ai-layout-content
+		.ai-layout-content-left
+		.ai-layout-content-list-tree
+		.el-tree
+		.tree_edit {
+		float: right;
+	}
+	.ai-layout-content
+		.ai-layout-content-left
+		.ai-layout-content-list-tree
+		.el-tree
+		.tree_edit
+		i {
+		width: 14px;
+		height: 14px;
+		font-size: 14px;
+		margin-right: 13px;
+	}
+	.ai-layout-content
+		.ai-layout-content-left
+		.ai-layout-content-list-tree
+		.el-tree
+		.tree_edit
+		i:hover {
+		color: #4b9fe9;
+    }
+    .el-tooltip__popper.is-dark{
+        background: #4b9fe9 !important;
+    }
+    .el-tooltip__popper .popper__arrow::after{
+        border-top-color: #4b9fe9 !important;
+    }
 	/* 右侧内容 */
 	.ai-layout-content .ai-layout-content-right {
 		width: 70%;
