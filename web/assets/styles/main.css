@@ -187,6 +187,7 @@ body {
 /* 右侧容器 */
 .ai-layout-container {
     display: inline-block;
+    width: calc(100% - 220px);
     height: calc(100% - 60px);
 }
 /* 右侧容器 -- 面包屑 */
