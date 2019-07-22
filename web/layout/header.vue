@@ -1,8 +1,8 @@
 <template>
 	<div class="ai-layout-header">
 		<div class="logo">
-			<img src="./../assets/images/favicon.png">
-			<span>高校大数据平台</span>
+			<img  class="logo-icon" src="./../assets/images/favicon.png" />
+			<span class="logo-text">高校大数据平台</span>
 		</div>
 		<ul class="navbar-nav">
 			<li>分析</li>

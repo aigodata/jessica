@@ -89,6 +89,13 @@ body {
     color: #fff;
     cursor: pointer;
 }
+.ai-layout-header .logo .logo-icon {
+    width: 23px;
+    height: 25px;
+    margin-right: 7px;
+    vertical-align: text-bottom;
+}
+.ai-layout-header .logo .logo-text {}
 .ai-layout-header .navbar-nav {
     display: inline-block;
     height: 100%;
@@ -132,20 +139,13 @@ body {
     display: none;
 }
 /* 头部 -- end */
-
 /* 左侧导航 */
-.ai-layout-sidebar {
-
-}
+.ai-layout-sidebar {}
 /* 右侧容器 */
 .ai-layout-container {
-    
+    height: calc(100% - 70px);
 }
-/* 右侧容器 - 面包屑 */
-.ai-layout-breadcrumb {
-
-}
-/* 右侧容器 - 内容 */
-.ai-layout-content {
-
-}
+/* 右侧容器 -- 面包屑 */
+.ai-layout-breadcrumb {}
+/* 右侧容器 -- 内容 */
+.ai-layout-content {}
