@@ -242,6 +242,7 @@ body {
 
 .ai-layout-container {
     display: inline-block;
+    width: calc(100% - 220px);
     height: calc(100% - 60px);
 }
 
