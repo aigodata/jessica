@@ -2,6 +2,16 @@
 
 root = true
 
+# Unix-style newlines with a newline ending every file
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+tab_width = 2
+
 # Set default charset
 [*.{js,html,css}]
 charset = utf-8
@@ -12,6 +22,26 @@ indent_size = 4
 tab_width = 4
 
 [*.vue]
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+[*.css]
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+[*.tpl]
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+[*.html]
+indent_style = tab
+indent_size = 4
+tab_width = 4
+
+[*.htm]
 indent_style = tab
 indent_size = 4
 tab_width = 4
