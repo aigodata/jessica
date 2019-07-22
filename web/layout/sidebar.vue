@@ -100,7 +100,7 @@
 	}
 	.ai-layout-sidebar .el-menu .el-submenu__title i {
 		margin-right: 10px;
-	}
+    }
 	.ai-layout-sidebar .el-menu .is-active .el-submenu__title {
 		background: linear-gradient(
 			-44deg,
@@ -108,8 +108,11 @@
 			rgba(90, 174, 248, 1)
 		);
 		color: #fff;
-	}
+    }
 	.ai-layout-sidebar .el-menu .is-active .el-submenu__title i {
 		color: #fff;
-	}
+    }
+    .ai-layout-sidebar .el-menu .el-submenu .el-menu-item:hover{
+        background: #f0f0f0;
+    }
 </style>

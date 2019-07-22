@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import localStore from 'store' // 浏览器存储
-
+import store from './store.js'
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/zh-CN'
 
@@ -20,6 +20,7 @@ Vue.config.productionTip = false
 
 let app = new Vue({
     router,
+    store,
     render: h => h(App),
 }).$mount('#app');
 
