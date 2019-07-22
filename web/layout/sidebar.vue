@@ -1,14 +1,115 @@
 <template>
 	<div class="ai-layout-sidebar">
-		sidebar
+		<div class="ai-layout-sidebar-title">设置</div>
+		<el-menu @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+			<el-submenu :index="`${index}`" :default-active="activeIndex" v-for="(item,index) in permissionMenu">
+				<template slot="title">
+					<i class="iconfont" :class="item.icon"></i>
+					<span slot="title">{{item.name}}</span>
+				</template>
+				<el-menu-item v-if="isChildren(item)" @click="activeItem(index,secondItem)" v-for="(secondItem,ii) in item.children" :index="`${index}-${ii}`">
+					{{secondItem.name}}
+				</el-menu-item>
+			</el-submenu>
+		</el-menu>
+
 	</div>
 </template>
 
 <script>
 	export default {
-		name: "layout-sidebar"
+		name: "layout-sidebar",
+		data () {
+			return {
+				isCollapse: false,
+				activeIndex: '1',
+				permissionMenu: [
+					{
+						icon: "iconzuzhi",
+						name: "组织信息管理",
+						routerName: "a",
+						children: [
+							{
+								icon: "icon-caiji",
+								name: "组织管理",
+								routerName: "a1"
+							},
+							{
+								icon: "icon-caiji",
+								name: "班级管理",
+								routerName: "a2"
+							}
+						]
+					},
+					{
+						icon: "iconxinxiguanli",
+						name: "用户信息管理",
+						routerName: "b",
+						children: [
+							{
+								icon: "icon-caiji",
+								name: "用户管理",
+								routerName: "b1"
+							},
+							{
+								icon: "icon-caiji",
+								name: "用户权限",
+								routerName: "b2"
+							}
+						]
+					}
+				],
+
+			}
+		},
+		methods: {
+			handleOpen (key, keyPath) {
+				this.activeItem(key)
+			},
+			activeItem (key, node) {
+				this.activeIndex = key;
+			},
+			handleClose () { },
+			// 是否有子菜单
+			isChildren (item) {
+				console.log(item.children && item.children.length > 0);
+				return item.children && item.children.length > 0;
+			},
+
+		},
+		mounted () {
+		}
 	};
 </script>
 
 <style>
+	.ai-layout-sidebar {
+		position: relative;
+	}
+	.ai-layout-sidebar .ai-layout-sidebar-title {
+		height: 50px;
+		padding: 18px;
+		font-size: 14px;
+		line-height: 14px;
+		color: #484747;
+		border-bottom: 1px solid #d3d3d3;
+	}
+	.ai-layout-sidebar .el-menu .el-submenu__title {
+		height: 45px;
+		line-height: 45px;
+	}
+	.ai-layout-sidebar .el-menu .el-submenu__title i {
+		margin-right: 10px;
+	}
+	.ai-layout-sidebar .el-menu .is-active .el-submenu__title {
+		background: linear-gradient(
+			-44deg,
+			rgba(75, 159, 233, 1),
+			rgba(90, 174, 248, 1)
+		);
+		color: #fff;
+	}
+	.ai-layout-sidebar .el-menu .is-active .el-submenu__title i {
+		color: #fff;
+	}
 </style>

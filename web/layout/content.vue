@@ -24,37 +24,17 @@
 			const data = [
 				{
 					id: 1,
-					label: '一级 1',
+					label: '铁道职业技术学院',
 					children: [{
 						id: 4,
-						label: '二级 1-1',
+						label: '校领导',
 						children: [{
 							id: 9,
-							label: '三级 1-1-1'
+							label: '学生处'
 						}, {
 							id: 10,
-							label: '三级 1-1-2'
+							label: '招生办'
 						}]
-					}]
-				}, {
-					id: 2,
-					label: '一级 2',
-					children: [{
-						id: 5,
-						label: '二级 2-1'
-					}, {
-						id: 6,
-						label: '二级 2-2'
-					}]
-				}, {
-					id: 3,
-					label: '一级 3',
-					children: [{
-						id: 7,
-						label: '二级 3-1'
-					}, {
-						id: 8,
-						label: '二级 3-2'
 					}]
 				}];
 			return {
@@ -179,13 +159,13 @@
 		.tree_edit
 		i:hover {
 		color: #4b9fe9;
-    }
-    .el-tooltip__popper.is-dark{
-        background: #4b9fe9 !important;
-    }
-    .el-tooltip__popper .popper__arrow::after{
-        border-top-color: #4b9fe9 !important;
-    }
+	}
+	.el-tooltip__popper.is-dark {
+		background: #4b9fe9 !important;
+	}
+	.el-tooltip__popper .popper__arrow::after {
+		border-top-color: #4b9fe9 !important;
+	}
 	/* 右侧内容 */
 	.ai-layout-content .ai-layout-content-right {
 		width: 70%;
