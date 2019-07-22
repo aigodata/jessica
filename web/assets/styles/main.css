@@ -126,7 +126,7 @@ body {
     padding: 0 16px;
 }
 .ai-layout-header .quick-menu li::after {
-    content:"";
+    content: "";
     position: absolute;
     right: 0;
     top: 50%;
@@ -134,18 +134,95 @@ body {
     width: 1px;
     height: 18px;
     background-color: #EDEDED;
+    opacity: 0.3;
 }
 .ai-layout-header .quick-menu li:last-child::after {
     display: none;
 }
+.ai-layout-header .quick-menu li .notification-icon {
+    color: #333;
+}
+.ai-layout-header .quick-menu li .notification-content {
+    position: absolute;
+    right: 11px;
+    top: 15px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #F45E5F;
+    box-shadow: 0px 1px 7px 0px rgba(223,104,105,0.5);
+}
+.ai-layout-header .quick-menu li .notification-content .total {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8px;
+    color: #fff;
+}
+.ai-layout-header .quick-menu li .avatar-icon {
+    margin-right: 10px;
+}
+.ai-layout-header .quick-menu li .nick-name {
+    margin-right: 6px;
+    font-size: 12px;
+}
+.ai-layout-header .quick-menu li .icon-item {
+    display: inline-block;
+    transform: rotate(90deg);
+    vertical-align: middle;
+}
+.ai-layout-header .quick-menu li .icon-item .dropdown-caret {
+    font-size: 8px;
+}
 /* 头部 -- end */
 /* 左侧导航 */
-.ai-layout-sidebar {}
+.ai-layout-sidebar {
+    display: inline-block;
+    width: 220px;
+    height: calc(100% - 60px);
+    vertical-align: top;
+    border: 1px solid #D3D3D3;
+}
 /* 右侧容器 */
 .ai-layout-container {
-    height: calc(100% - 70px);
+    display: inline-block;
+    height: calc(100% - 60px);
 }
 /* 右侧容器 -- 面包屑 */
-.ai-layout-breadcrumb {}
+.ai-layout-breadcrumb {
+    height: 50px;
+    padding: 18px;
+    font-size: 14px;
+    line-height: 14px;
+}
+.ai-layout-breadcrumb .breadcrumb-item {
+    display: inline-block;
+    margin-left: 12px;
+}
+.ai-layout-breadcrumb .breadcrumb-item:first-child {
+    margin-left: 0;
+}
+.ai-layout-breadcrumb .breadcrumb-item .guide-icon {
+    font-size: 14px;
+    color: #313131;   
+}
+.ai-layout-breadcrumb .breadcrumb-item .breadcrumb-label {
+    color: #666666;
+    cursor: pointer;
+}
+.ai-layout-breadcrumb .breadcrumb-item .breadcrumb-label::after {
+    content: "/";
+    margin-left: 10px;
+}
+.ai-layout-breadcrumb .breadcrumb-item:last-child .breadcrumb-label::after {
+    display: none;
+}
+.ai-layout-breadcrumb .breadcrumb-item .breadcrumb-label.active {
+    color: #4B9FE9;
+}
 /* 右侧容器 -- 内容 */
-.ai-layout-content {}
+.ai-layout-content {
+    position: relative;
+    height: calc(100% - 50px);
+}

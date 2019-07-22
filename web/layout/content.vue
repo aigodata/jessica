@@ -33,13 +33,6 @@
 </script>
 
 <style>
-	.ai-layout-content {
-		position: relative;
-		height: 100%;
-	}
-	.ai-layout-content div {
-		box-sizing: border-box;
-	}
 	.ai-layout-content::after {
 		content: "";
 		display: block;
