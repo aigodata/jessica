@@ -30,11 +30,20 @@
 			layoutContent
 		},
 		computed: {},
+		watch: {},
 		data() {
 			return {};
 		},
-		methods: {},
-		mounted() {}
+		methods: {
+			clear() {},
+			load() {}
+		},
+		mounted() {
+			this.load();
+		},
+		destroyed() {
+			this.clear();
+		}
 	};
 </script>
 <style>

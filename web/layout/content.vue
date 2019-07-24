@@ -1,33 +1,8 @@
 <template>
 	<div class="ai-layout-content">
-		<div class="ai-layout-content-left">
-			<!-- 搜索框 -->
-			<div class="ai-layout-content-left-search">
-				<el-input placeholder="请输入内容" v-model="inputValue">
-					<i slot="prefix" class="el-input__icon el-icon-search"></i>
-					<i class="el-input__icon iconfont iconhuiche" slot="suffix">
-					</i>
-				</el-input>
-			</div>
-			<!-- 树形菜单 -->
-			<div class="ai-layout-content-list-tree">
-				<el-tree :data="data" node-key="id" default-expand-all :expand-on-click-node="false" :render-content="renderContent">
-				</el-tree>
-			</div>
-		</div>
-		<div class="ai-layout-content-right">
-			<!-- 组织管理 -->
-			<managementModul />
-			<!-- 班级管理 -->
-			<!-- <classModul /> -->
-			<!-- 教师信息 -->
-			<!-- <teacherInfoModul /> -->
-			<!-- 学生信息 -->
-			<!-- <studentInfoModul /> -->
-		</div>
+		<router-view></router-view>
 	</div>
 </template>
-
 <script>
 	import managementModul from './contentInfo/organization-management';
 	import classModul from './contentInfo/class-management';
@@ -35,45 +10,10 @@
 	import studentInfoModul from './contentInfo/student-info';
 	export default {
 		name: "layout-content",
-		data () {
-			const data = [
-				{
-					id: 1,
-					label: '铁道职业技术学院',
-					children: [{
-						id: 1 - 1,
-						label: '校领导',
-						children: []
-					}, {
-						id: 1 - 2,
-						label: '学生处',
-						children: []
-					}, {
-						id: 1 - 3,
-						label: '招生办',
-						children: []
-					}, {
-						id: 1 - 4,
-						label: '教导处',
-						children: []
-					}, {
-						id: 1 - 5,
-						label: '办公室',
-						children: []
-					}, {
-						id: 1 - 6,
-						label: '总务处',
-						children: []
-					}, {
-						id: 1 - 7,
-						label: '后勤部',
-						children: []
-					}]
-				}];
-			return {
-				inputValue: "",
-				data: JSON.parse(JSON.stringify(data))
-			}
+		computed: {},
+		watch: {},
+		data() {
+			return {};
 		},
 		components: {
 			managementModul,
@@ -82,32 +22,17 @@
 			studentInfoModul
 		},
 		methods: {
-			renderContent (h, { node, data, store }) {
-				return (
-					<span class="custom-tree-node">
-						<i class="iconfont iconbaohudi_wenjianjia ai-layout-content-tree-icon"></i>
-						<span>{node.label}</span>
-						<span class="tree_edit">
-							<el-tooltip class="item" effect="dark" content="新增" placement="top">
-								<i class="iconfont iconxinzeng" on-click={() => this.appendTree(data)}></i>
-							</el-tooltip>
-							<el-tooltip class="item" effect="dark" content="编辑" placement="top">
-								<i class="iconfont iconxiugai" on-click={() => this.editTree(data)}></i>
-							</el-tooltip>
-							<el-tooltip class="item" effect="dark" content="删除" placement="top">
-								<i class="iconfont iconshanchu" on-click={() => this.deleteTree(node, data)}></i>
-							</el-tooltip>
-						</span>
-					</span>
-				);
-			},
-			appendTree () { },
-			editTree () { },
-			deleteTree () { }
+			clear() {},
+			load() {}
+		},
+		mounted() {
+			this.load();
+		},
+		destroyed() {
+			this.clear();
 		}
 	};
 </script>
-
 <style>
 	.ai-layout-content::after {
 		content: "";
