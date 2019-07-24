@@ -1,11 +1,10 @@
 <template>
-	<div class="ai-layout-content">
-		<router-view></router-view>
-	</div>
+	<div>我是 chart data</div>
 </template>
+
 <script>
 	export default {
-		name: "layout-content",
+		name: "ai-chart-data",
 		computed: {},
 		watch: {},
 		data() {
@@ -23,5 +22,6 @@
 		}
 	};
 </script>
+
 <style>
 </style>

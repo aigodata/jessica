@@ -1,11 +1,10 @@
 <template>
-	<div class="ai-layout-content">
-		<router-view></router-view>
-	</div>
+	<div>我是个table</div>
 </template>
+
 <script>
 	export default {
-		name: "layout-content",
+		name: "ai-table",
 		computed: {},
 		watch: {},
 		data() {
@@ -23,5 +22,6 @@
 		}
 	};
 </script>
+
 <style>
 </style>

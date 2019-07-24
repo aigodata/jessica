@@ -1,11 +1,9 @@
 <template>
-	<div class="ai-layout-content">
-		<router-view></router-view>
-	</div>
+	<div>我就是个列表</div>
 </template>
+
 <script>
 	export default {
-		name: "layout-content",
 		computed: {},
 		watch: {},
 		data() {
@@ -23,5 +21,6 @@
 		}
 	};
 </script>
+
 <style>
 </style>

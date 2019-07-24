@@ -1,11 +1,10 @@
 <template>
-	<div class="ai-layout-content">
-		<router-view></router-view>
-	</div>
+	<div>我是个折线图</div>
 </template>
+
 <script>
 	export default {
-		name: "layout-content",
+		name: "ai-line",
 		computed: {},
 		watch: {},
 		data() {
@@ -23,5 +22,6 @@
 		}
 	};
 </script>
+
 <style>
 </style>

@@ -22,11 +22,20 @@ export default new Router({
                 meta: { name: 'main' },
                 component: Main,
                 children: [
-                    // {
-                    //     path: 'test',
-                    //     meta: { name: 'test' },
-                    //     component: () => import('./views/test'),
-                    // }
+                    {
+                        path: '/',
+                        redirect: '/main/other'
+                    },
+                    {
+                        path: 'other',
+                        meta: { name: 'other' },
+                        component: () => import('./views/other/other'),
+                    },
+                    {
+                        path: 'bi-editor',
+                        meta: { name: 'bi-editor' },
+                        component: () => import('./views/bi/bi-editor'),
+                    }
                 ]
             }
         ]

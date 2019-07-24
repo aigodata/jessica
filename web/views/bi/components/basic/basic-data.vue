@@ -1,11 +1,10 @@
 <template>
-	<div class="ai-layout-content">
-		<router-view></router-view>
-	</div>
+	<div>我是 basic data</div>
 </template>
+
 <script>
 	export default {
-		name: "layout-content",
+		name: "ai-basic-data",
 		computed: {},
 		watch: {},
 		data() {
