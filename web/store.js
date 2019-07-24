@@ -15,18 +15,20 @@ const store = new Vuex.Store({
             state.theme = params;
         },
         setSidebarStatus(state, params) {
-            state.sidebarStatus = params
+            state.sidebarStatus = params;
         }
     },
-    actions: {},
+    actions: {
+
+    },
     getters: {
         theme: (state) => {
             return state.theme || localStore.get('theme') || 'theme-chalk'
         },
         sidebarStatus: (state) => {
-            return state.state
+            return state.sidebarStatus
         }
     }
 })
 
-export default store
+export default store;
