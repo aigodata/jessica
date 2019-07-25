@@ -46,7 +46,7 @@ export default new Router({
             {
                 path: 'setting',
                 meta: { name: 'setting' },
-                component: () => import('./views/setting'),
+                component: () => import('./views/data-source/main'),
             }
         ]
     }]

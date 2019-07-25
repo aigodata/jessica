@@ -4,25 +4,42 @@
 		<layout-header></layout-header>
 		<!-- 侧边栏 -->
 		<layout-sidebar>
-			<div class="ai-layout-sidebar-title">设置</div>
-			<el-menu @open="handleOpen" @close="handleClose" :collapse="isCollapse">
-				<el-submenu
-					:index="`${index}`"
-					:default-active="activeIndex"
-					v-for="(item,index) in permissionMenu"
-				>
-					<template slot="title">
-						<i class="iconfont" :class="item.icon"></i>
-						<span slot="title">{{item.name}}</span>
-					</template>
-					<el-menu-item
-						v-if="isChildren(item)"
-						@click="activeItem(index,secondItem)"
-						v-for="(secondItem,ii) in item.children"
-						:index="`${index}-${ii}`"
-					>{{secondItem.name}}</el-menu-item>
-				</el-submenu>
-			</el-menu>
+			<div class="ai-layout-sidebar-title">分析</div>
+			<div class="directory-container">
+				<div class="directory-module">
+					<div class="directory-node-content">
+						<span class="icon-label">
+							<i class="iconfont iconyidongshu directory-icon"></i>
+						</span>
+						<span class="icon-label">
+							<i class="iconfont iconsanjiaoxing directory-arrow-icon"></i>
+						</span>
+						<span class="icon-label">
+							<i class="iconfont iconwenjianjia directory-file-icon"></i>
+						</span>
+						<span class="directory-name">测试模块页面</span>
+						<span class="icon-label directory-setting">...</span>
+					</div>
+					<ul class="directory-file-modle">
+						<li class="file-content">
+							<span class="icon-label">
+								<i class="iconfont iconyidongshu directory-icon"></i>
+							</span>
+							<span class="icon-label">
+								<i class="iconfont iconwenjian directory-file-icon"></i>
+							</span>
+							<span class="file-name">index页面</span>
+							<span class="icon-label directory-setting">...</span>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<span>
+						<i class="iconfont iconxinzeng"></i>
+					</span>
+					<span>添加菜单</span>
+				</div>
+			</div>
 		</layout-sidebar>
 		<!-- 内容模块 -->
 		<layout-module>
@@ -51,59 +68,9 @@
 		computed: {},
 		watch: {},
 		data() {
-			return {
-				isCollapse: false,
-				activeIndex: "1",
-				permissionMenu: [
-					{
-						icon: "iconzuzhi",
-						name: "组织信息管理",
-						routerName: "a",
-						children: [
-							{
-								icon: "icon-caiji",
-								name: "组织管理",
-								routerName: "a1"
-							},
-							{
-								icon: "icon-caiji",
-								name: "班级管理",
-								routerName: "a2"
-							}
-						]
-					},
-					{
-						icon: "iconxinxiguanli",
-						name: "用户信息管理",
-						routerName: "b",
-						children: [
-							{
-								icon: "icon-caiji",
-								name: "用户管理",
-								routerName: "b1"
-							},
-							{
-								icon: "icon-caiji",
-								name: "用户权限",
-								routerName: "b2"
-							}
-						]
-					}
-				]
-			};
+			return {};
 		},
 		methods: {
-			handleOpen(key, keyPath) {
-				this.activeItem(key);
-			},
-			activeItem(key, node) {
-				this.activeIndex = key;
-			},
-			handleClose() {},
-			// 是否有子菜单
-			isChildren(item) {
-				return item.children && item.children.length > 0;
-			},
 			clear() {},
 			load() {}
 		},
@@ -116,8 +83,59 @@
 	};
 </script>
 <style>
-	#app {
-		height: 100%;
+	.ai-layout-sidebar .directory-container {
+	}
+	.ai-layout-sidebar .directory-container .directory-module {
+		padding: 0 10px;
+	}
+	.ai-layout-sidebar
+		.directory-container
+		.directory-module
+		.directory-node-content {
 		position: relative;
+		height: 45px;
+		padding: 10px 0;
+	}
+	.ai-layout-sidebar .directory-container .icon-label {
+		margin-right: 2px;
+		cursor: pointer;
+	}
+	.ai-layout-sidebar .directory-container .directory-icon {
+	}
+	.ai-layout-sidebar .directory-container .directory-icon.active {
+		color: #36a2f0;
+	}
+	.ai-layout-sidebar
+		.directory-container
+		.directory-module
+		.directory-arrow-icon {
+	}
+	.ai-layout-sidebar .directory-container .directory-module .directory-file-icon {
+	}
+	.ai-layout-sidebar .directory-container .directory-module .directory-name {
+	}
+	.ai-layout-sidebar .directory-container .directory-module .directory-setting {
+		/* line-height: 35px; */
+		position: absolute;
+		right: 0;
+		top: 50%;
+		height: 100%;
+		transform: translateY(-50%);
+	}
+	.ai-layout-sidebar
+		.directory-container
+		.directory-module
+		.directory-file-modle
+		.file-content {
+		position: relative;
+		height: 45px;
+		padding: 10px 0 10px 40px;
+	}
+	.ai-layout-sidebar
+		.directory-container
+		.directory-module
+		.directory-file-modle
+		.file-content
+		.directory-file-name {
 	}
 </style>
