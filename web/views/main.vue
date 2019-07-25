@@ -1,31 +1,30 @@
 <template>
-	<div id="app">
+	<div class="ai-layout-container">
 		<!-- 头部 -->
 		<layout-header></layout-header>
 		<!-- 侧边栏 -->
 		<layout-sidebar></layout-sidebar>
-		<!-- 内容 -->
-		<layout-container>
+		<!-- 内容模块 -->
+		<layout-module>
 			<!-- 面包屑 -->
 			<layout-breadcrumb></layout-breadcrumb>
 			<!-- 页面 -->
 			<layout-content></layout-content>
-		</layout-container>
+		</layout-module>
 	</div>
 </template>
 <script>
 	import layoutHeader from "./../layout/header";
 	import layoutSidebar from "./../layout/sidebar";
-	import layoutContainer from "./../layout/container";
+	import layoutModule from "./../layout/module";
 	import layoutBreadcrumb from "./../layout/breadcrumb";
 	import layoutContent from "./../layout/content";
 
 	export default {
-		name: "app",
 		components: {
 			layoutHeader,
 			layoutSidebar,
-			layoutContainer,
+			layoutModule,
 			layoutBreadcrumb,
 			layoutContent
 		},

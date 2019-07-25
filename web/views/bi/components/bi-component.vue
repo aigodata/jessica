@@ -1,7 +1,5 @@
 <template>
-	<div>
-		<component :is="currentComponent" :data="data"></component>
-	</div>
+	<component :is="currentComponent" :data="data"></component>
 </template>
 
 <script>

@@ -1,12 +1,12 @@
 <template>
-	<div class="ai-layout-container">
+	<div class="ai-layout-module">
 		<slot></slot>
 	</div>
 </template>
 
 <script>
 	export default {
-		name: "layout-container"
+		name: "layout-module"
 	};
 </script>
 

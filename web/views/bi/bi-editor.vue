@@ -209,47 +209,6 @@
 			load() {
 				this.initComponent();
 				this.initSetting();
-
-				/***
-				 * line
-				 * 		xAxis
-				 * 		yAxis
-				 * pie
-				 * 		legend
-				 * 			1.可根据数值为数字的进行第一步过滤
-				 * bar
-				 */
-
-				let dataSource = [
-					{
-						date: "2016-05-01",
-						name: "王小1",
-						age: 11,
-						address: "上海市普陀区金沙江路 51 弄",
-						city: "上海"
-					},
-					{
-						date: "2016-05-02",
-						name: "王小2",
-						age: 8,
-						address: "上海市普陀区金沙江路 52 弄",
-						city: "上海"
-					},
-					{
-						date: "2016-05-03",
-						name: "王小3",
-						age: 4,
-						address: "上海市普陀区金沙江路 53 弄",
-						city: "上海"
-					},
-					{
-						date: "2016-05-04",
-						name: "王小4",
-						age: 20,
-						address: "上海市普陀区金沙江路 54 弄",
-						city: "上海"
-					}
-				];
 			}
 		},
 		mounted() {
@@ -265,5 +224,11 @@
 	@import url(./assets/styles/main.css);
 	.setting-active {
 		background-color: lime;
+	}
+	.el-collapse-item__header {
+		padding: 0 10px;
+	}
+	.el-collapse-item__arrow {
+		margin: 0 0 0 auto;
 	}
 </style>

@@ -3,8 +3,6 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-import Main from './views/main.vue'
-
 const EMPTY_VIEW = { template: '<router-view />' };
 
 export default new Router({
@@ -15,28 +13,40 @@ export default new Router({
         children: [
             {
                 path: '/',
-                redirect: '/main'
+                redirect: '/bi'
             },
+            // {
+            //     path: 'single',
+            //     meta: { name: 'single' },
+            //     component: EMPTY_VIEW,
+            //     children: [
+            //         {
+            //             path: 'bi-editor',
+            //             meta: { name: 'bi-editor' },
+            //             component: () => import('./views/bi/bi-editor'),
+            //         }
+            //     ]
+            // },
             {
-                path: 'main',
-                meta: { name: 'main' },
-                component: Main,
+                path: 'bi',
+                meta: { name: 'bi' },
+                component: () => import('./views/bi/main'),
                 children: [
                     {
                         path: '/',
-                        redirect: '/main/other'
+                        component: () => import('./views/bi/bi'),
                     },
                     {
-                        path: 'other',
-                        meta: { name: 'other' },
-                        component: () => import('./views/other/other'),
-                    },
-                    {
-                        path: 'bi-editor',
+                        path: 'editor',
                         meta: { name: 'bi-editor' },
                         component: () => import('./views/bi/bi-editor'),
                     }
                 ]
+            },
+            {
+                path: 'setting',
+                meta: { name: 'setting' },
+                component: () => import('./views/setting'),
             }
         ]
     }]

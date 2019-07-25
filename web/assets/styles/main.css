@@ -99,6 +99,10 @@ body {
     /*背景颜色*/
 }
 
+/* 页面容器 */
+.ai-layout-container {
+    height: 100%;
+}
 
 /* 头部 -- start */
 
@@ -238,16 +242,16 @@ body {
 }
 
 
-/* 右侧容器 */
+/* 右侧模块 */
 
-.ai-layout-container {
+.ai-layout-module {
     display: inline-block;
     width: calc(100% - 220px);
     height: calc(100% - 60px);
 }
 
 
-/* 右侧容器 -- 面包屑 */
+/* 右侧模块 -- 面包屑 */
 
 .ai-layout-breadcrumb {
     height: 50px;

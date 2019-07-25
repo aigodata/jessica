@@ -1,5 +1,7 @@
 <template>
-	<div>我就是个列表</div>
+    <div>
+        我是setting
+    </div>
 </template>
 
 <script>

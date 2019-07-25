@@ -1,11 +1,11 @@
 .ai-layout-bi-container {
-    height: calc(100% - 50px);
+    height: 100%;
 }
 .ai-layout-sidebar-component {
     display: inline-block;
     width: 200px;
     height: 100%;
-    border-right: 1px solid #ebebeb;
+    border: 1px solid #ebebeb;
     vertical-align: top;
 }
 .ai-layout-sidebar-component .seach-module {
