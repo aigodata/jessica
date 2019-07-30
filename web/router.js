@@ -13,7 +13,54 @@ export default new Router({
         children: [
             {
                 path: '/',
-                redirect: '/bi'
+                redirect: 'main'
+            },
+            {
+                path: 'main',
+                meta: { name: 'main' },
+                component: () => import('./views/main'),
+                children: [
+                    {
+                        path: '/',
+                        redirect: 'aigodata_jessica'
+                    },
+                    {
+                        path: 'aigodata_jessica',
+                        meta: { name: '商业BI' },
+                        component: () => import('./views/aigodata_jessica/aigodata_jessica'),
+                        children: [
+                            {
+                                path: '/',
+                                redirect: 'ai_dashboard'
+                            },
+                            {
+                                path: 'ai_dashboard',
+                                meta: { name: '仪表盘' },
+                                component: () => import('./views/aigodata_jessica/ai_dashboard/ai_dashboard')
+                            },
+                            {
+                                path: 'ai_widget_editor',
+                                meta: { name: '数据编辑器' },
+                                component: () => import('./views/aigodata_jessica/ai_widget_editor/ai_widget_editor')
+                            }
+                        ]
+                    },
+                    {
+                        path: 'ai_data_indicator',
+                        meta: { name: '数据指标' },
+                        component: () => import('./views/aigodata_jessica/ai_data_indicator/ai_data_indicator')
+                    },
+                    {
+                        path: 'ai_data_source',
+                        meta: { name: '数据源' },
+                        component: () => import('./views/aigodata_jessica/ai_data_source/ai_data_source')
+                    },
+                    {
+                        path: 'ai_data_dictionary',
+                        meta: { name: '数据字典' },
+                        component: () => import('./views/aigodata_jessica/ai_data_dictionary/ai_data_dictionary')
+                    }
+                ]
             },
             // {
             //     path: 'single',
@@ -43,11 +90,6 @@ export default new Router({
                     }
                 ]
             },
-            {
-                path: 'setting',
-                meta: { name: 'setting' },
-                component: () => import('./views/data-source/main'),
-            }
         ]
     }]
 });

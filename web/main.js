@@ -6,7 +6,7 @@ import store from './store.js'
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/zh-CN'
 
-import './assets/styles/main.css'
+import './assets/styles/reset.css'
 import './assets/fonts/iconfont.css' // 图标字体
 import './assets/fonts/iconfont.js'
 import 'element-ui/lib/theme-chalk/index.css' // element-ui
